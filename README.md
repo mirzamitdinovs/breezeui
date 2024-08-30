@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# BreezeUI
 
-First, run the development server:
+BreezeUI is a customizable and reusable component library built with React and Tailwind CSS. It provides a set of UI components that can be easily integrated into your projects, helping you build modern and responsive web applications with ease.
+
+## Features
+
+- **Customizable**: Easily customize the components using Tailwind CSS.
+- **Reusable**: Use the components across multiple projects for a consistent UI.
+- **Responsive**: Components are designed to work well on all screen sizes.
+- **TypeScript Support**: Written in TypeScript for type safety and better developer experience.
+
+## Installation
+
+You can install BreezeUI via npm:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install breeze_ui
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or if you prefer yarn:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn add breeze_ui
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Usage
 
-## Learn More
+Here's an example of how to use BreezeUI components in your project:
 
-To learn more about Next.js, take a look at the following resources:
+```jsx
+import React from 'react';
+import { Button } from 'breeze_ui';
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+const App = () => {
+  const handleClick = () => {
+    console.log('Button clicked!');
+  };
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  return (
+    <div className="app">
+      <Button type="primary" onClick={handleClick}>
+        Click Me
+      </Button>
+    </div>
+  );
+};
 
-## Deploy on Vercel
+export default App;
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Available Components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### Button
+
+A customizable button component with various styles and states.
+
+```jsx
+<Button 
+  type="primary" 
+  variant="solid" 
+  buttonType="button" 
+  onClick={handleClick} 
+  disabled={false}>
+  Click Me
+</Button>
+```
+
+- `type`: The style variant of the button. Options: `'default' | 'primary' | 'secondary' | 'info' | 'success' | 'warning' | 'error'`. Default is `'default'`.
+- `variant`: The style of the button. Options: `'solid' | 'outline'`. Default is `'solid'`.
+- `buttonType`: The type of the button element. Options: `'button' | 'submit'`. Default is `'button'`.
+- `onClick`: The function to call when the button is clicked.
+- `disabled`: Boolean to disable the button. Default is `false`.
+
+## Contributing
+
+We welcome contributions to BreezeUI! To contribute:
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Open a Pull Request.
+
+## Issues
+
+If you encounter any issues or have questions, feel free to open an issue on GitHub.
+
+## License
+
+BreezeUI is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
+
+## Contact
+
+For any inquiries, please contact [mirzamitdinovsayyod@gmail.com](mailto:mirzamitdinovsayyod@gmail.com).
+
+---
+
+Happy coding!
