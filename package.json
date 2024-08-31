@@ -1,8 +1,8 @@
 {
-  "name": "breezeui",
+  "name": "@mirzamitdinovs/breezeui",
   "version": "0.1.0",
   "main": "src/index.js",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "start": "next start",
