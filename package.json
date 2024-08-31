@@ -7,10 +7,11 @@
     "dev": "next dev",
     "start": "next start",
     "lint": "next lint",
-    "build:tailwind": "tailwindcss -i ./src/app/globals.css -o ./dist/tailwind.css --minify",
-    "build": "npm run build:tailwind && other-build-commands"
+    "build:tailwind": "tailwindcss -i ./src/app/globals.css -o ./src/assets/tailwind.css --minify",
+    "build": "npm run build:tailwind && next build"
   },
   "dependencies": {
+    "@svgr/webpack": "^8.1.0",
     "next": "14.2.7",
     "react": "^18",
     "react-dom": "^18"
