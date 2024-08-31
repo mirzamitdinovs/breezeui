@@ -1,6 +1,6 @@
 # BreezeUI
 
-BreezeUI is a customizable and reusable component library built with React and Tailwind CSS. It provides a set of UI components that can be easily integrated into your projects, helping you build modern and responsive web applications with ease.
+BreezeUI is a customizable and reusable component library built with NextJS and Tailwind CSS. It provides a set of UI components that can be easily integrated into your projects, helping you build modern and responsive web applications with ease.
 
 ## Features
 
