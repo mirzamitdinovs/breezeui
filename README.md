@@ -1,4 +1,3 @@
-
 # BreezeUI
 
 BreezeUI is a customizable and reusable component library built with React and Tailwind CSS. It provides a set of UI components that can be easily integrated into your projects, helping you build modern and responsive web applications with ease.
@@ -15,13 +14,13 @@ BreezeUI is a customizable and reusable component library built with React and T
 You can install BreezeUI via npm:
 
 ```bash
-npm install breeze_ui
+npm install breezeui
 ```
 
 Or if you prefer yarn:
 
 ```bash
-yarn add breeze_ui
+yarn add breezeui
 ```
 
 ## Usage
@@ -30,20 +29,42 @@ Here's an example of how to use BreezeUI components in your project:
 
 ```jsx
 import React from 'react';
-import { Button } from 'breeze_ui';
+import { Button, Modal } from 'breezeui';
 
 const App = () => {
-  const handleClick = () => {
-    console.log('Button clicked!');
-  };
+	const modalRef = React.useRef(null);
 
-  return (
-    <div className="app">
-      <Button type="primary" onClick={handleClick}>
-        Click Me
-      </Button>
-    </div>
-  );
+	const handleOpenModal = () => {
+		modalRef.current.open();
+	};
+
+	const handleSave = async () => {
+		console.log('Saving...');
+		// Your save logic here
+	};
+
+	const handleCancel = async () => {
+		console.log('Cancelling...');
+		// Your cancel logic here
+	};
+
+	return (
+		<div className='app'>
+			<Button type='primary' onClick={handleOpenModal}>
+				Open Modal
+			</Button>
+			<Modal
+				ref={modalRef}
+				title='My Modal'
+				save={handleSave}
+				cancel={handleCancel}
+				size='md'
+				showPadding={true}
+			>
+				<p>Your modal content goes here.</p>
+			</Modal>
+		</div>
+	);
 };
 
 export default App;
@@ -56,13 +77,14 @@ export default App;
 A customizable button component with various styles and states.
 
 ```jsx
-<Button 
-  type="primary" 
-  variant="solid" 
-  buttonType="button" 
-  onClick={handleClick} 
-  disabled={false}>
-  Click Me
+<Button
+	type='primary'
+	variant='solid'
+	buttonType='button'
+	onClick={handleClick}
+	disabled={false}
+>
+	Click Me
 </Button>
 ```
 
@@ -72,7 +94,35 @@ A customizable button component with various styles and states.
 - `onClick`: The function to call when the button is clicked.
 - `disabled`: Boolean to disable the button. Default is `false`.
 
-## Contributing
+#### Modal
+
+A customizable modal component for displaying content in a pop-up dialog.
+
+```jsx
+<Modal
+	ref={modalRef}
+	title='My Modal'
+	save={handleSave}
+	cancel={handleCancel}
+	size='md'
+	showPadding={true}
+>
+	<p>Your modal content goes here.</p>
+</Modal>
+```
+
+- `ref`: A reference to control the modal externally (open/close).
+- `children`: The content to be displayed inside the modal.
+- `save`: A function to be called when the "Save" button is clicked. Should return a promise.
+- `cancel`: A function to be called when the "Cancel" button is clicked. Should return a promise.
+- `title`: The title of the modal.
+- `size`: The size of the modal. Options: `'sm' | 'md' | 'lg' | 'xl'`. Default is `'md'`.
+- `showPadding`: Boolean to toggle padding around the modal content. Default is `true`.
+- `header`: Custom header content. Overrides the title if provided.
+- `hideButtons`: Boolean to hide the Save/Cancel buttons. Default is `false`.
+- `hideHeader`: Boolean to hide the header. Default is `false`.
+
+### Contributing
 
 We welcome contributions to BreezeUI! To contribute:
 
