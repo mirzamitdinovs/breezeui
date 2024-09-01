@@ -1,6 +1,5 @@
-import Button from '@/components/Button';
 import Modal from '@/components/Modal';
-import Image from 'next/image';
+import React from 'react';
 
 export default function Home() {
 	return (

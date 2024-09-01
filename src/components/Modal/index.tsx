@@ -1,14 +1,12 @@
 'use client';
 
-import {
+import React, {
 	forwardRef,
+	ReactNode,
 	useImperativeHandle,
 	useState,
-	ReactNode,
-	Ref,
 } from 'react';
 import Button from '../Button';
-import Image from 'next/image';
 type ModalProps = {
 	children: ReactNode;
 	save?: () => Promise<void>;
