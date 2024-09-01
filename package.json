@@ -1,6 +1,6 @@
 {
   "name": "@mirzamitdinovs/breezeui",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "private": false,
@@ -20,7 +20,7 @@
     "clean:dist": "rm -rf dist",
     "copy:fonts": "copyfiles -u 3 src/assets/fontawesome/* dist/fontawesome",
     "build:css": "npx postcss src/assets/app.css -o dist/app.min.css",
-    "build:tailwind": "npx tailwindcss -i ./src/app/globals.css -o ./dist/tailwind.css --minify",
+    "build:tailwind": "npx tailwindcss -i ./src/globals.css -o ./dist/tailwind.css --minify",
     "build:prepare": "mkdirp dist",
     "build:typescript": "rm tsconfig.tsbuildinfo && tsc --build --force --verbose",
     "build": "npm run clean:dist && npm run build:prepare && npm run copy:fonts && npm run build:css && npm run build:tailwind && npm run build:typescript"
