@@ -39,7 +39,7 @@ const Modal = forwardRef<ModalHandle, ModalProps>(
 		},
 		ref
 	) => {
-		const [toggle, setToggle] = useState(true);
+		const [toggle, setToggle] = useState(false);
 
 		const open = () => {
 			setToggle(true);

@@ -39,7 +39,7 @@ import React, { forwardRef, useImperativeHandle, useState, } from 'react';
 import Button from '../Button';
 var Modal = forwardRef(function (_a, ref) {
     var children = _a.children, save = _a.save, cancel = _a.cancel, title = _a.title, _b = _a.size, size = _b === void 0 ? 'md' : _b, _c = _a.showPadding, showPadding = _c === void 0 ? true : _c, header = _a.header, _d = _a.hideButtons, hideButtons = _d === void 0 ? false : _d, _e = _a.hideHeader, hideHeader = _e === void 0 ? false : _e;
-    var _f = useState(true), toggle = _f[0], setToggle = _f[1];
+    var _f = useState(false), toggle = _f[0], setToggle = _f[1];
     var open = function () {
         setToggle(true);
     };
@@ -91,18 +91,32 @@ var Modal = forwardRef(function (_a, ref) {
     };
     if (!toggle)
         return null;
-    return (React.createElement("div", { className: 'fixed inset-0 z-[100] flex items-center justify-center sm:px-5' },
-        React.createElement("div", { className: 'absolute inset-0 bg-slate-900/60 backdrop-blur transition-opacity duration-300' }),
-        React.createElement("div", { className: "relative w-full ".concat(sizeClasses[size], " max-h-[90vh] flex flex-col rounded-lg bg-white text-center transition-opacity duration-300 dark:bg-navy-700") },
-            !hideHeader && (React.createElement("div", { className: 'flex justify-between rounded-t-lg bg-slate-200 px-4 py-3 dark:bg-navy-800 sm:px-5' },
-                header ? (header) : (React.createElement("h3", { className: 'text-base font-medium text-slate-700 dark:text-navy-100' }, title)),
-                React.createElement("button", { type: 'button', onClick: onCancel, className: 'btn -mr-1.5 size-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25' },
-                    React.createElement("svg", { xmlns: 'http://www.w3.org/2000/svg', fill: 'none', viewBox: '0 0 24 24', strokeWidth: 1.5, stroke: 'currentColor', className: 'size-5' },
-                        React.createElement("path", { strokeLinecap: 'round', strokeLinejoin: 'round', d: 'M6 18 18 6M6 6l12 12' }))))),
-            React.createElement("div", { className: "flex-1 ".concat(showPadding ? 'p-5' : '', " scrollbar-sm overflow-y-scroll") },
-                React.createElement("div", null, children),
-                !hideButtons && (React.createElement("div", { className: 'pt-2 flex justify-end gap-2' },
-                    React.createElement(Button, { type: 'error', onClick: onCancel, buttonType: 'button' }, "Cancel"),
-                    React.createElement(Button, { onClick: onSave, type: 'success', buttonType: save ? 'button' : 'submit' }, "Save")))))));
+    return (<div className='fixed inset-0 z-[100] flex items-center justify-center sm:px-5'>
+				<div className='absolute inset-0 bg-slate-900/60 backdrop-blur transition-opacity duration-300'/>
+				<div className={"relative w-full ".concat(sizeClasses[size], " max-h-[90vh] flex flex-col rounded-lg bg-white text-center transition-opacity duration-300 dark:bg-navy-700")}>
+					{!hideHeader && (<div className='flex justify-between rounded-t-lg bg-slate-200 px-4 py-3 dark:bg-navy-800 sm:px-5'>
+							{header ? (header) : (<h3 className='text-base font-medium text-slate-700 dark:text-navy-100'>
+									{title}
+								</h3>)}
+							<button type='button' onClick={onCancel} className='btn -mr-1.5 size-7 rounded-full p-0 hover:bg-slate-300/20 focus:bg-slate-300/20 active:bg-slate-300/25 dark:hover:bg-navy-300/20 dark:focus:bg-navy-300/20 dark:active:bg-navy-300/25'>
+								<svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth={1.5} stroke='currentColor' className='size-5'>
+									<path strokeLinecap='round' strokeLinejoin='round' d='M6 18 18 6M6 6l12 12'/>
+								</svg>
+							</button>
+						</div>)}
+					<div className={"flex-1 ".concat(showPadding ? 'p-5' : '', " scrollbar-sm overflow-y-scroll")}>
+						<div>{children}</div>
+						{!hideButtons && (<div className='pt-2 flex justify-end gap-2'>
+								<Button type='error' onClick={onCancel} buttonType='button'>
+									Cancel
+								</Button>
+
+								<Button onClick={onSave} type='success' buttonType={save ? 'button' : 'submit'}>
+									Save
+								</Button>
+							</div>)}
+					</div>
+				</div>
+			</div>);
 });
 export default Modal;

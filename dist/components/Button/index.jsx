@@ -95,11 +95,11 @@ var Button = function (_a) {
             }
         });
     }); };
-    return (React.createElement("button", { type: buttonType, className: "btn gap-2 ".concat(selectedClasses, " ").concat((showLoader && loading) || disabled
+    return (<button type={buttonType} className={"btn gap-2 ".concat(selectedClasses, " ").concat((showLoader && loading) || disabled
             ? 'opacity-50 cursor-not-allowed'
-            : ''), onClick: handleClick, disabled: (showLoader && loading) || disabled },
-        showLoader && loading && (React.createElement("div", { className: "spinner size-4 animate-spin rounded-full border-[3px] border-r-transparent ".concat(spinnerClasses[type]) })),
-        ' ',
-        children));
+            : '')} onClick={handleClick} disabled={(showLoader && loading) || disabled}>
+			{showLoader && loading && (<div className={"spinner size-4 animate-spin rounded-full border-[3px] border-r-transparent ".concat(spinnerClasses[type])}></div>)}{' '}
+			{children}
+		</button>);
 };
 export default Button;
