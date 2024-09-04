@@ -1,5 +1,6 @@
 import Button from '@/components/Button';
 import Modal from '@/components/Modal';
+import Table from '@/components/Table';
 // import Popover from '@/components/Popover';
 import React from 'react';
 const page = () => {
@@ -10,6 +11,7 @@ const page = () => {
 				<h3>Hello</h3>
 			</Modal>
 			{/* <Popover /> */}
+			<Table />
 		</div>
 	);
 };
