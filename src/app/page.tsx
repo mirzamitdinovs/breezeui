@@ -1,6 +1,6 @@
 import Button from '@/components/Button';
 import Modal from '@/components/Modal';
-import Popover from '@/components/Popover';
+// import Popover from '@/components/Popover';
 import React from 'react';
 const page = () => {
 	return (
@@ -9,7 +9,7 @@ const page = () => {
 			<Modal>
 				<h3>Hello</h3>
 			</Modal>
-			<Popover />
+			{/* <Popover /> */}
 		</div>
 	);
 };
